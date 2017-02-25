@@ -8,4 +8,11 @@ gem 'omniauth-open_wechat'
 
 gem 'wechat'
 
+group :development do
+  gem "spring"
+  gem 'pry-rails'
+  gem 'byebug'
+end
+
+ 
 gemspec

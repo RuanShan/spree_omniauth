@@ -17,9 +17,9 @@ module Spree::Open
       # 1. 寻找用户 uid + provider
       # 2. 如果他没有那么创造和记录用户在O _码数据
       # You need to implement the method below in your model (e.g. app/models/user.rb)
-      @user = User.from_omniauth(request.env["omniauth.auth"])
+      @user = Spree::User.from_omniauth(request.env["omniauth.auth"]||{})
 
-      if @user.persisted?
+      if @user
         sign_in_and_redirect @user, :event => :authentication #this will throw if @user is not activated
         set_flash_message(:notice, :success, :kind => "Facebook") if is_navigational_format?
       else
