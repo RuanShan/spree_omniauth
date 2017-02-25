@@ -3,13 +3,6 @@ module SpreeOmniauth
     class InstallGenerator < Rails::Generators::Base
 
       class_option :auto_run_migrations, :type => :boolean, :default => false
-      source_root File.expand_path("../templates", __FILE__)
-
-
-      desc "This generator creates an initializer file at config/initializers"
-      def create_initializer_file
-        copy_file "spree_omniauth.rb", "config/initializers/#{file_name}.rb"
-      end
 
       def add_javascripts
         append_file 'vendor/assets/javascripts/spree/frontend/all.js', "//= require spree/frontend/spree_omniauth\n"
@@ -33,6 +26,7 @@ module SpreeOmniauth
           puts 'Skipping rake db:migrate, don\'t forget to run it!'
         end
       end
+
     end
   end
 end

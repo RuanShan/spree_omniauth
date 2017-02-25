@@ -1,12 +1,15 @@
 SpreeOmniauth
 =============
 
-Introduction goes here.
+Integrate spree with wechat.
 
 Installation
 ------------
 
 Add spree_omniauth to your Gemfile:
+
+https://github.com/plataformatec/devise/wiki/OmniAuth-with-multiple-models
+
 
 ```ruby
 gem 'spree_omniauth'
@@ -18,6 +21,10 @@ Bundle your dependencies and run the installation generator:
 bundle
 bundle exec rails g spree_omniauth:install
 ```
+List of Strategies
+------------------
+https://github.com/free1/omniauth-open_wechat
+
 
 Testing
 -------

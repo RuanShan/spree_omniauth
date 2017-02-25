@@ -15,6 +15,11 @@ module SpreeOmniauth
       end
     end
 
+    initializer "spree.assets.precompile", :group => :all do |app|
+      app.config.assets.precompile += %w(
+        github_32.png
+      )
+    end
     config.to_prepare &method(:activate).to_proc
   end
 end
